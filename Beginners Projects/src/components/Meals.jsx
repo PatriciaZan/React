@@ -3,12 +3,12 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 
 const Meals = () => {
-    const [items, setitems] = useState([])
+    const [items, setItems] = useState([])
 
     useEffect(() => {
         axios.get("https://www.themealdb.com/api/json/v1/1/filter.php?c=Seafood").then(res => {
             //console.log(res.data.meals);
-            setitems(res.data.meals)
+            setItems(res.data.meals)
         }).catch(err => {
             console.log(err);
         });
