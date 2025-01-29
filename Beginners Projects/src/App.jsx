@@ -12,6 +12,7 @@
 //import Form from "./components/Form"
 
 // ECOMERCE
+import './index.css'
 import { useState } from "react"
 import Sidebar from "./EComerceProject/components/Sidebar/Sidebar"
 import Navigation from "./EComerceProject/navigation/Nav"
@@ -29,11 +30,12 @@ const App = () => {
 
   // ___________ Input Filter ___________ 
   const handleInputChange = (event) => {
-    setQuery(event.taget.value)
+    setQuery(event.target.value)
   }
 
-  const filteredItems = data.filter((data) => 
-    data.title.toLocaleLowerCase().indexOf(query.toLocaleLowerCase()!== -1))
+  const filteredItems = data.filter(
+    (data) => 
+    data.title.toLocaleLowerCase().indexOf(query.toLocaleLowerCase()) !== -1 )
 
   // ___________ Radio Filter ___________ 
   const handleChange = (event) => {
@@ -42,7 +44,7 @@ const App = () => {
   
   // ___________ BTNs Filter ___________ 
   const handleClick = (event) => {
-    setSelectedCategory(event.taget.value)
+    setSelectedCategory(event.target.value)
   }
 
   function filteredData(data, selected, query){
@@ -101,9 +103,16 @@ const App = () => {
       {/* ECOMERCE PROJECT */}
 
       <Sidebar handleChange={handleChange} />
-      <Navigation />
-      <Recommended />
-      <Products />
+      <Navigation
+        query={query}
+        handleInputChange={handleInputChange}
+      />
+      <Recommended 
+        handleClick={handleClick}
+      />
+      <Products
+        result={result}
+      />
 
 
     </>

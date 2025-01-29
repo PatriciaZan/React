@@ -56,8 +56,8 @@
 }
 
 .sidebar-label-container .checkmark::after {
-    top: 6.9px;
-    left: 6.6px;
+    top: 30%;
+    left: 30%;
     width: 8px;
     height: 8px;
     border-radius: 50%;

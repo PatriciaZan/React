@@ -4,13 +4,15 @@ import './Nav.css'
 import { FaHeart } from 'react-icons/fa'
 
 
- function Nav() {
+ function Nav({ handleInputChange, query}) {
   return (
     <nav>
       <div className="nav-container">
         <input 
           className='search-input'
           type="text" 
+          onChange={handleInputChange}
+          value={query}
           placeholder='Enter Your Search Shoes.'/>
       </div>
 

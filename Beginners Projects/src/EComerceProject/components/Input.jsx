@@ -9,7 +9,7 @@ function Input({ handleChange, value, title, name, color }) {
         name={name}/>
       <span 
         className="checkmark" 
-        style={{backgroundColor: color}} ></span>{title}
+        style={{backgroundColor: color === 'white' ? '#cccccc' : color}} ></span>{title}
     </label>
   )
 }

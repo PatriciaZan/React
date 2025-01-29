@@ -1,27 +1,29 @@
 import { AiFillStar } from "react-icons/ai";
 import { BsFillBagFill } from "react-icons/bs";
 
-function Card() {
+function Card({ img, title, star, reviews, prevPrice, newPrice }) {
   return (
     <section className='card'>
       <img 
         className='card-img'
-        src="https://m.media-amazon.com/images/I/71h5+MbEK7L._AC_UY625_.jpg" alt="Shoe Image" />
+        src={img}
+        alt={title} />
 
       <div className="card-details">
-        <h3 className='card-title'>Shoe</h3>
+        <h3 className='card-title'>{title}</h3>
 
         <section className='card-reviews'>
+          {/* {star} */}
           <AiFillStar className='ratings-start' /> 
           <AiFillStar className='ratings-start' /> 
           <AiFillStar className='ratings-start' /> 
           <AiFillStar className='ratings-start' />
-          <span className='total-reviews'>4</span>
+          <span className='total-reviews'>{reviews}</span>
         </section>
 
         <section className='card-price'>
           <div className="price">
-            <del>$300</del> $200
+            <del>{prevPrice}</del> {newPrice}
           </div>
           <div className="bag">
             <BsFillBagFill className='bag-icon'/>
