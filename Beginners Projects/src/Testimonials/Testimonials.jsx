@@ -1,4 +1,4 @@
-import "../styles/TestimonialsStyle.css"
+import "./TestimonialsStyle.css"
 import { useState } from "react"
 
 const Testimonials = () => {

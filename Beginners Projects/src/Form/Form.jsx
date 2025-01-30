@@ -1,4 +1,4 @@
-import '../styles/Form.css'
+import "./Form.css"
 import React, { useState } from 'react'
 
 

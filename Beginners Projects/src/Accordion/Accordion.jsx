@@ -1,4 +1,4 @@
-import '../styles/AccordionStyle.css'
+import "./AccordionStyle.css"
 import { useState } from "react"
 
 const Accordion = ({ title, content }) => {

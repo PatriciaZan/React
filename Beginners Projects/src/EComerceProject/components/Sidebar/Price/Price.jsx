@@ -25,21 +25,21 @@ import './Price.css'
 
         <Input 
           handleChange={handleChange}
-          value={100}
+          value="$100"
           title="$50 - $100"
           name="test2"
         />
 
         <Input 
           handleChange={handleChange}
-          value={150}
+          value="$150"
           title="$100 - $150"
           name="test2"
         />
 
         <Input 
           handleChange={handleChange}
-          value={200}
+          value="$200"
           title="Over $150"
           name="test2"
         />

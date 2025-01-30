@@ -1,4 +1,4 @@
-import "../styles/mealsStyle.css";
+import "./mealsStyle.css"
 import axios from "axios";
 import { useState, useEffect } from "react";
 

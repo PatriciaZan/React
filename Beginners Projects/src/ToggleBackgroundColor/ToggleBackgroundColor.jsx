@@ -1,4 +1,4 @@
-import '../styles/ToggleBackgroundColor.Style.css'
+import "./ToggleBackgroundColorStyle.css"
 import { useState } from 'react'
 
 

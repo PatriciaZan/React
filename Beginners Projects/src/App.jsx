@@ -1,10 +1,10 @@
-// import Counter from "./components/Counter"
-//import Todo from "./components/Todo"
-//import Meals from "./components/Meals"
-//import Calculator from "./components/Calculator"
-// import ToggleBackgroundColor from "./components/ToggleBackgroundColor"
-// import HiddenSearchBar from "./components/HiddenSearchBar"
-// import Testimonials from "./components/Testimonials"
+// import Counter from "./Counter/Counter.jsx"
+// import Todo from "./Todo/Todo.jsx"
+// import Meals from "./Meals/Meals.jsx"
+// import Calculator from "./Calculator/Calculator.jsx"
+// import ToggleBackgroundColor from "./ToggleBackgroundColor/ToggleBackgroundColor.jsx"
+// import HiddenSearchBar from "./HiddenSearchBar/HiddenSearchBar.jsx"
+// import Testimonials from "./Testimonials/Testimonials.jsx"
 
 // import { accordionData } from './components/utils/content'
 // import Accordion from "./components/Accordion"
@@ -86,7 +86,7 @@ const App = () => {
       {/* <Counter /> */}
       {/* <Todo /> */}
       {/* <Meals /> */}
-      {/* <Calculator /> */}
+      {/* <Calculator />  */}
       {/* <ToggleBackgroundColor /> */}
       {/* <HiddenSearchBar /> */}
       {/* <Testimonials /> */}
@@ -101,8 +101,8 @@ const App = () => {
       {/* <Form /> */}
 
       {/* ECOMERCE PROJECT */}
-
-      <Sidebar handleChange={handleChange} />
+      
+       <Sidebar handleChange={handleChange} />
       <Navigation
         query={query}
         handleInputChange={handleInputChange}
@@ -112,9 +112,9 @@ const App = () => {
       />
       <Products
         result={result}
-      />
+      /> 
 
-
+      
     </>
   )
 }

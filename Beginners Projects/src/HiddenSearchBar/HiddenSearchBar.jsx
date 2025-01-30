@@ -1,4 +1,4 @@
-import "../styles/HiddenSearchBarStyle.css"
+import "./HiddenSearchBarStyle.css"
 import { useState } from "react"
 import { FaSearch } from "react-icons/fa"
 
