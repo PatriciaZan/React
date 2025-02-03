@@ -83,6 +83,16 @@ const App = () => {
 
   return (
     <>
+     {/* TO SEE THE PROJECTS YOU MUST:
+
+      1º COMMENT THE 'ECOMMERCE PROJECT' TILL 'ECOMERCE PROJECT END';
+      2º UNCOMMENT WHAT PROJECT COMPONENT YOU WANT TO SEE;
+      3º UNCOMMENT THE IMPORT CORRESPONDENT FILE;
+      4º RUN -> npm run dev TO SEE THE PROJECT IN THE BROWSER;
+      
+      TO SEE NEXT PROJECT COMMENT THE PREVIOUS COMPONENT AND IMPORT.
+     
+     */}
       {/* <Counter /> */}
       {/* <Todo /> */}
       {/* <Meals /> */}
@@ -102,7 +112,7 @@ const App = () => {
 
       {/* ECOMERCE PROJECT */}
       
-       <Sidebar handleChange={handleChange} />
+      <Sidebar handleChange={handleChange} />
       <Navigation
         query={query}
         handleInputChange={handleInputChange}
@@ -113,7 +123,7 @@ const App = () => {
       <Products
         result={result}
       /> 
-
+      {/* ECOMERCE PROJECT END */}
       
     </>
   )

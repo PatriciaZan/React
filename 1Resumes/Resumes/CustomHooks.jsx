@@ -2,7 +2,7 @@
 /*
     start with "use" -> useFetch , useForm
     call other hooks within them
-    They llow t oextract and reuse logic that involves state or side effects
+    They allow to extract and reuse logic that involves state or side effects
     + readable and maintainable
 */
 // "https://jsonplaceholder.typicode.com/todos"
@@ -16,7 +16,7 @@ const useFetch = (url) => {
     useEffect(() => {
         fetch(url)
         .then((response) => response.json())
-        .then((data) => SVGMetadataElement(data))
+        .then((data) => setData(data)) // SVGMetadataElement(data) ??
     }, []);
 
     return [data];
@@ -25,7 +25,7 @@ const useFetch = (url) => {
 export default useFetch
 
 // App component
-//import useFetch from ''
+// import useFetch from ''
 const App = () => {
     const [data] = useFetch("https://jsonplaceholder.typicode.com/todos")
 
