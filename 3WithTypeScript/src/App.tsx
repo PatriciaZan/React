@@ -5,6 +5,8 @@
 // import { Info, AdminInfoList } from "./Chellenges/2ReusableTypes/types"
 //import { useState } from "react"
 
+import UserList from "./Chellenges/6UserList/UserList"
+
 
 // function App() {
 //   {/* #2 */}
@@ -166,13 +168,26 @@ const App = () => {
 export default App
 */
 // TYPE FOR useEffect _____________________________________
-
+/*
 import MyComponent from "./components/MyComponent"
 
 const App = () => {
   return (
     <div>
       <MyComponent />
+    </div>
+  )
+}
+
+export default App
+*/
+// CHALLENGE 6 ___________________________
+
+
+const App = () => {
+  return (
+    <div>
+      <UserList />
     </div>
   )
 }

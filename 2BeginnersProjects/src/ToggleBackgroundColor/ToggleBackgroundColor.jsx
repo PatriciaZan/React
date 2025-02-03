@@ -21,7 +21,7 @@ const ToggleBackgroundColor = () => {
             { backgroundColor == '1b1b1b' ? 'Black Theme' : 'White Theme'}
             </button>
             <section className='content'>
-                <h1>Welcome to A <br /> Real World</h1>
+                <h1>Explore the Projects! <br /> Happy Coding!</h1>
             </section>
 
     </div>
