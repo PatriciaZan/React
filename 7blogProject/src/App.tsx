@@ -8,6 +8,7 @@ import { useState } from "react"
 import { Blog } from "./types"
 import Modal from "./components/Modal"
 import BlogForm from "./components/BlogForm"
+import ArticleList from "./components/ArticleList"
 
 const App = () => {
 
@@ -43,6 +44,9 @@ const App = () => {
             </button>
 
             {/* Article list */}
+            <ArticleList onEdit={openModalForEdit}/>
+
+
             {isModalOpen && <Modal onClose={() => setModalOpen(false)}>
                 <BlogForm existingBlog={editingBlog} onCLose={() => setModalOpen(false)}/>
               </Modal>}

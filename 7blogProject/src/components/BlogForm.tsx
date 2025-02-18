@@ -5,7 +5,7 @@ import { useBlogs } from "./shared/BlogContext"
 
 interface BlogFormProps {
   existingBlog?: Blog;
-  onClose: ()=> void;
+  onClose: () => void;
 }
 
 const BlogForm: React.FC<BlogFormProps> = ({ existingBlog, onClose}) => {
@@ -27,7 +27,19 @@ const BlogForm: React.FC<BlogFormProps> = ({ existingBlog, onClose}) => {
   }, [existingBlog]);
 
   const handleSubmit = () => {
-    
+    const blog: Blog = {
+      id: existingBlog ? existingBlog.id : Date.now(),
+      title, description, image, time,
+    };
+
+    if(existingBlog){
+      updateBlog(blog)
+    } else{
+      addBlog(blog)
+    }
+
+    //onClose();
+
   }
 
   return (
@@ -59,6 +71,8 @@ const BlogForm: React.FC<BlogFormProps> = ({ existingBlog, onClose}) => {
               onChange={e => setImage(e.target.value)}
               className="block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-black"  
             />
+
+            <input type="date" placeholder="Time" value={time}/>
 
       </div>
 
