@@ -4,7 +4,7 @@ import { Blog } from "../types";
 import { useBlogs } from "./shared/BlogContext"
 
 interface BlogFormProps {
-  existingBlog?: Blog;
+  existingBlog?: Blog | void;
   onClose: () => void;
 }
 
@@ -72,7 +72,13 @@ const BlogForm: React.FC<BlogFormProps> = ({ existingBlog, onClose}) => {
               className="block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-black"  
             />
 
-            <input type="date" placeholder="Time" value={time}/>
+            <input 
+              type="date" 
+              placeholder="Time" 
+              value={time}
+              onChange={e => setTime(e.target.value)}
+              className="block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-black"
+              />
 
       </div>
 

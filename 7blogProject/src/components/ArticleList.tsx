@@ -7,7 +7,7 @@ interface ArticleListProps {
 }
 
 const ArticleList: React.FC<ArticleListProps> = ({ onEdit }) => {
-    const {blogs, deleteBlog }= useBlogs();
+    const {blogs, /*deleteBlog*/ } = useBlogs();
 
   return (
     <div className="ml-[5rem]">
@@ -15,7 +15,7 @@ const ArticleList: React.FC<ArticleListProps> = ({ onEdit }) => {
             <ArticleCard 
                 key={blog.id} 
                 article={blog} 
-                onDelete={(blog.id)} 
+                onDelete={blog.id}
                 onEdit={() => onEdit(blog)}/>
         ))}
     </div>
