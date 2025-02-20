@@ -11,18 +11,24 @@ const Table = () => {
 
     const [sortConfig, setSortConfig] = useState<{key: string; direction: string} | null>(null);
 
-    const [filters, setFilters] = useSatte({
+    const [filters, setFilters] = useState({
         name: "",
         country: "",
         email: "",
         project: "",
         status: "",
-    })
+    });
+
+    const [searchQuery, setSearchQuery] = useState("")
     
-    const sortProject = (key: string) => {
+    const sortProjects = (key: string) => {
         let sortedProjects = [...projects];
 
-        if(sortConfig && sortConfig.key === key && sortConfig.direction === 'ascending'){
+        if(
+            sortConfig && 
+            sortConfig.key === key && 
+            sortConfig.direction === 'ascending'
+        ){
             sortedProjects.sort((a, b) => (a[key] > b[key] ? -1 : 1));
             setSortConfig({ key, direction: 'descending' })
         } else{
@@ -37,6 +43,41 @@ const Table = () => {
         sortProjects(key)
         setDropdownVisible(false)
     }
+
+    const handleFilterChange = (e: React.ChangeEvent <HTMLInputElement>) => {
+        setFilters({
+            ...filters, 
+            [e.target.name]: e.target.value,
+        });
+    };
+
+    const filteredProjects = projects.filter((projects) => 
+        (searchQuery === "" || 
+
+        Object.values(projects).some((value) => 
+            value.toLowerCase().includes(searchQuery.toLowerCase())
+    )) && 
+        (filters.name === "" || 
+    projects.client.toLowerCase().includes(filters.name.toLowerCase()))    && 
+        (filters.country === "" || 
+    projects.country.toLowerCase().includes(filters.country.toLowerCase())) && 
+        (filters.email === "" || 
+    projects.email.toLowerCase().includes(filters.email.toLowerCase()))    && 
+        (filters.project === "" || 
+    projects.project.toLowerCase().includes(filters.project.toLowerCase())) && 
+        (filters.status === "" || 
+    projects.status.toLowerCase().includes(filters.project.toLowerCase()))
+);
+
+// PAGINATION
+const [currentPage, setCurrentPage] = useState(1)
+const itemsPerPage = 8;
+const startIndex = (currentPage - 1) * itemsPerPage;
+const currentProjects = filteredProjects.slice(startIndex, startIndex + itemsPerPage);
+const totalPages = Math.ceil(filteredProjects.length / itemsPerPage);
+
+const handlePageChange  = (pageNumber: number ) => setCurrentPage(pageNumber);
+
   return (
     <div className="p-4 w-[93%] ml-[5rem]">
         <div className="flex items-center mb-5">
@@ -79,6 +120,8 @@ const Table = () => {
                         <input 
                             type="text" 
                             name="name" 
+                            value={filters.name}
+                            onChange={handleFilterChange}
                             className="bf-gray-900 text-white rounded p-2 w-full"/>
                     </div>
 
@@ -87,6 +130,8 @@ const Table = () => {
                         <input 
                             type="text" 
                             name="county" 
+                            value={filters.country}
+                            onChange={handleFilterChange}
                             className="bf-gray-900 text-white rounded p-2 w-full"/>
                     </div>
 
@@ -95,6 +140,8 @@ const Table = () => {
                         <input 
                             type="text" 
                             name="email" 
+                            value={filters.email}
+                            onChange={handleFilterChange}
                             className="bf-gray-900 text-white rounded p-2 w-full"/>
                     </div>
 
@@ -103,6 +150,8 @@ const Table = () => {
                         <input 
                             type="text" 
                             name="project" 
+                            value={filters.project}
+                            onChange={handleFilterChange}
                             className="bf-gray-900 text-white rounded p-2 w-full"/>
                     </div>
 
@@ -111,6 +160,8 @@ const Table = () => {
                         <input 
                             type="text" 
                             name="status" 
+                            value={filters.status}
+                            onChange={handleFilterChange}
                             className="bf-gray-900 text-white rounded p-2 w-full"/>
                     </div>
                 </div>
@@ -138,7 +189,7 @@ const Table = () => {
             </thead>
 
             <tbody>
-                {projects.map((project, index)=> (
+                {currentProjects.map((project, index)=> (
                     <tr className="border border-gray-700" key={Math.random()}>
                         <td className="px-4 py-2" >
                             <img src={project.image} alt={project.client} className="w-[3rem] h-[3rem] object-cover rounded-full"/>
@@ -148,25 +199,46 @@ const Table = () => {
                         <td className="px-4 py-2">{project.country}</td>
                         <td className="px-4 py-2">{project.email}</td>
                         <td className="px-4 py-2">{project.project}</td>
+                        
 
                         <td className="px-4 py-2">
-                            <div className="w-24 h-2 bg-gray-700 rounded">
+                            {project.status === "Completed" ? (
+                                <div className="h-2 bg-gray-700 rounded">
                                 <div className="h-2 bg-green-500 rounded"></div>
                             </div>
+                            ) : (
+                                <div className="w-24 h-2 bg-gray-700 rounded">
+                                <div className="h-2 bg-yellow-500 rounded"></div>
+                            </div>
+                            )}
+
+                            {/* <div className="w-24 h-2 bg-gray-700 rounded">
+                                <div className="h-2 bg-green-500 rounded"></div>
+                            </div> */}
                         </td>
+
+                        <td className="px-4 py-2">{project.status}</td>
+                        <td className="px-4 py-2">{project.date}</td>
+                        <td className="px-4 py-2">. . .</td>
                     </tr>
                 ))}
             </tbody>
         </table>
 
         <div className="flex justify-end mt-4">
-                <button className="px-4 py-2 bg-gray-700 text-white rounded mr-2 disabled:opacity-50">Previous</button>
+                <button 
+                    disabled={currentPage === 1} 
+                    onClick={() => handlePageChange(currentPage - 1)} 
+                    className="px-4 py-2 bg-gray-700 text-white rounded mr-2 disabled:opacity-50">Previous</button>
 
                 <span className="px-4 py-2 text-white">
-                    Page 1 of 4
+                    Page {currentPage} of {totalPages}
                 </span>
 
-                <button className="px-4 py-2 bg-gray-700 text-white rounded mr-2 disabled:opacity-50">Next</button>
+                <button 
+                    disabled={currentPage === totalPages}
+                    onClick={() => handlePageChange(currentPage + 1)}
+                    className="px-4 py-2 bg-gray-700 text-white rounded mr-2 disabled:opacity-50">Next</button>
         </div>
 
     </div>

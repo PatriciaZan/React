@@ -1,8 +1,9 @@
+import { AiFillDatabase } from "react-icons/ai"
 
 const Sidebar = () => {
   return (
     <div className="w-16 fixed h-screen border border-[#242424] p-4 flex flex-col items-center space-y-8">
-        <div className="text-white">logo</div>
+        <div className="text-white"><AiFillDatabase /></div>
         <div className="text-gray-400">📂</div>
         <div className="text-gray-400">👤</div>
         <div className="text-gray-400">⚙</div>
