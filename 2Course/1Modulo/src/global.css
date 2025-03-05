@@ -1,0 +1,21 @@
+:root{
+    --clr-cinza: #EBEBEC;
+    --clr-black: #272727;
+    --clr-rosa: #F06197;
+    --clr-verde: #36B59F;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background: var(--clr-cinza);
+}
+
+body,input,textarea,button{
+    font-size: 1rem;
+    font-family: sans-serif;
+}

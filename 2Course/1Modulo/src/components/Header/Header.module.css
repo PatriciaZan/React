@@ -1,0 +1,13 @@
+.Header{
+    color: var(--clr-cinza);
+    background: var(--clr-black);
+}
+
+.Header h1 span{
+    color: var(--clr-rosa);
+}
+
+.Header h1{
+    font-size: 1.3rem;
+    padding: 0.25rem 0.5rem;
+}
