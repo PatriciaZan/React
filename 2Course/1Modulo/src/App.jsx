@@ -1,18 +1,18 @@
+import { BrowserRouter, Router } from 'react-router-dom';
 import './App.css'
 
-import { Header, Conteudo, Footer } from './components';
 
 const App = () => {
 
   return (
-    <>
-      <Header nameUser="Patricia"/>
+    <BrowserRouter>
+      <Router />
+      {/* <Header nameUser="Patricia"/>
       <Conteudo>
-        <h2>Titulo</h2>
-        <p>Lorem, ipsum dolor.</p>
+        <Inicial />
       </Conteudo>
-      <Footer />
-    </>
+      <Footer /> */}
+    </BrowserRouter>
   )
 };
 

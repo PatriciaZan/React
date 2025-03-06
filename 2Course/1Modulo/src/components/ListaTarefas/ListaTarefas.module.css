@@ -1,0 +1,5 @@
+.ListaTarefas{
+    display: flex;
+    flex-direction: column;
+    gap: 05.rem;
+}

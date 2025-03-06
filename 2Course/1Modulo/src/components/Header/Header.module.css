@@ -1,6 +1,14 @@
 .Header{
-    color: var(--clr-cinza);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     background: var(--clr-black);
+    color: var(--clr-cinza);
+    padding: 0.25rem 0.5rem;
+}
+.Header a {
+    text-decoration: none;
+    color: var(--clr-cinza);
 }
 
 .Header h1 span{
