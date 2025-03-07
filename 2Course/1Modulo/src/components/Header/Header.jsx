@@ -6,13 +6,13 @@ const Header = () => {
 
   return (
     <div className={styles.Header}>
-      <Link to="/">
+      {/* <Link to="/"> */}
         <h1>
           <span>ToDo</span>List
         </h1>
-      </Link>
+      {/* </Link> */}
 
-      <Link to="/sobre-nos">Sobre Nós</Link>
+      // <Link to="/sobre-nos">Sobre Nós</Link>
     </div>
   )
 }
