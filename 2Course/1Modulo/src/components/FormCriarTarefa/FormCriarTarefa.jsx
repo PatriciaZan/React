@@ -3,6 +3,7 @@ import { Botao } from "../Botao"
 import { CampoTexto } from "../CampoTexto/CampoTexto"
 import style from './FormCriarTarefa.module.css'
 import { useAppContext } from "../../hooks/useAppContext"
+import { Loading } from "../Loading/Loading"
 
 const FormCriartarefa = (props) => {
   const { adiconarTarefa } = useAppContext();
@@ -32,7 +33,7 @@ const FormCriartarefa = (props) => {
       <CampoTexto 
         value={nomeTarefa} 
         onChange={onChangeNomeTarefa}/>
-      <Botao texto='+'/>
+      <Botao texto={loadingCriar ? <Loading /> : '+'}/>
     </form>
   )
 }
