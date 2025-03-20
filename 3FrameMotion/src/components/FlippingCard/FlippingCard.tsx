@@ -1,6 +1,12 @@
 import { motion } from "framer-motion"
 import { useState } from "react"
 
+const cardVariantes = {
+    front: {rotateY: 0},
+    back: {rotateY: 100},
+
+}
+
 const FlippingCard = () => {
     const [isFlipped, setIsFlipped] = useState(false)
 
@@ -10,10 +16,7 @@ const FlippingCard = () => {
     onClick={() => setIsFlipped(!isFlipped)}
     className="persoective-1000">
         <motion.div 
-        variants={{
-            front: {rotateY: 0},
-            back: {rotateY: 100},
-        }}
+        variants={cardVariantes}
         initial="front"
         animate={isFlipped ? 'back' : 'front'}
         transition={{duration: 0.6}}
