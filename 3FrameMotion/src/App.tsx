@@ -2,14 +2,17 @@
 //import BouncingLoader from "./components/BouncingLoader/BouncingLoader"
 //import FlippingCard from "./components/FlippingCard/FlippingCard"
 
-//import AnimatedCard from "./components/AnimatedCard/AnimatedCard"
-import AnimatedGallery from "./components/AnimatedGallery/AnimatedGallery"
+import AnimatedShape from "./components/AnimatedShape/AnimatedShape"
+import StaggerAnimation from "./components/StaggerAnimation/StaggerAnimation"
+
 
 //import { motion } from "framer-motion"
 
 const App = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center">
+    <div>
+      
+   
       {/* <motion.div 
         className='box'
         // animate
@@ -46,7 +49,13 @@ const App = () => {
         dragConstraints={{top: -50, left: -50, right: 50, bottom: 50}}/>  */}
 
         {/* <AnimatedCard /> */}
-        <AnimatedGallery />
+
+    {/*<div className="min-h-screen flex items-center justify-center">
+         <AnimatedGallery />
+      </div> */}
+
+      {/* <AnimatedShape /> */}
+      <StaggerAnimation />
     </div>
   )
 }
