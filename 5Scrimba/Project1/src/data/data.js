@@ -3,7 +3,7 @@ export default [
     {
         id: 1,
         img: {
-            src: "../assets/mountFuji.jpg",
+            src: "../src/assets/mountFuji.jpg",
             alt: "Mount Fuji"
         },
         title: "Mont Fuji",
@@ -16,7 +16,7 @@ export default [
     {
         id: 2,
         img: {
-            src: "../assets/torontocanada.jpg",
+            src: "../src/assets/torontocanada.jpg",
             alt: "Toronto Canada"
         },
         title: "Toronto City",
@@ -29,7 +29,7 @@ export default [
     {
         id: 3,
         img: {
-            src: "../assets/spaceneedle.jpg",
+            src: "../src/assets/spaceneedle.jpg",
             alt: "Space Needle"
         },
         title: "Space Needle",
