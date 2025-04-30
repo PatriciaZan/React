@@ -42,3 +42,10 @@ const Main = () => {
 }
 
 export default Main
+
+
+// async function getRecipe(){
+//     const recipeMarkdown = await getRecipeFromChefClaude(ingredients)
+//     console.log(recipeMarkdown);
+    
+// }
