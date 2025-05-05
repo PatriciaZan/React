@@ -1,12 +1,23 @@
 import React, { useState } from 'react'
 import Recipe from './recipe';
 import IngredientsList from './IngredientsList';
+import { useRef } from 'react';
+import { useEffect } from 'react';
 
 const Main = () => {
     const [ingredients, setIngredients] = useState(
         ["all the main spices", "pasta", "ground beef", "tomato paste"])
 
     const [recipeShown, setRecipeShown] = useState(false);
+    const recipeSection = useRef(null)
+    //console.log(recipeSection);
+
+    useEffect(() => {
+        if(recipeShown !== "" && recipeSection.current !== null){
+            recipeSection.current.scrollIntoView({behavior: "smooth"})
+        }
+    },[recipeShown])
+    
 
 
     function addIngredient(event){
@@ -31,6 +42,7 @@ const Main = () => {
         </form>
         {ingredients.length > 0 && 
         <IngredientsList 
+            ref={recipeSection}
             ingredients={ingredients} 
             toogleRecipeShown={toogleRecipeShown} />}
 
