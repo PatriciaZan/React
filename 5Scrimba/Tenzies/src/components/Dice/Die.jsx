@@ -6,7 +6,7 @@ const Die = (prop) => {
     }
 
   return (
-    <button style={styles}>{prop.value}</button>
+    <button style={styles} onClick={prop.hold}>{prop.value}</button>
   )
 }
 
