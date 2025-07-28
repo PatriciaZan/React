@@ -40,35 +40,26 @@ function Assembly() {
     <span key={index}>{letter.toUpperCase()}</span>
   ))
 
-//  const keyboardElements = alphabet.split("").map(letter => {
-//         const isGuessed = guessedLetters.includes(letter)
-//         const isCorrect = isGuessed && currentWord.includes(letter)
-//         const isWrong = isGuessed && !currentWord.includes(letter)
-//         const className = clsx({
-//             correct: isCorrect,
-//             wrong: isWrong
-//         })
+ const keyboardElements = alphabet.split("").map(letter => {
+        const isGuessed = guessedLetters.includes(letter)
+        const isCorrect = isGuessed && currentWord.includes(letter)
+        const isWrong = isGuessed && !currentWord.includes(letter)
+        const className = clsx({
+            correct: isCorrect,
+            wrong: isWrong
+        })
 
     //console.log(className);
-    const keyboardElements = alphabet.split("").map(letter => (
-        <button
-            key={letter}
-            onClick={() => addGuessedLetter(letter)}
-        >
-            {letter.toUpperCase()}
-        </button>
-    ))
+    console.log(guessedLetters);
     
-    
-
-   return (
-     <button 
-        className={className}
-        key={letter} 
-        onClick={() => addGueseedLetter(letter)}
-      >{letter.toUpperCase()}</button>
-   )}
-  )
+    return (
+      <button 
+          className={className}
+          key={letter} 
+          onClick={() => addGueseedLetter(letter)}
+        >{letter.toUpperCase()}</button>
+    )}
+    )
   
 
   return (
