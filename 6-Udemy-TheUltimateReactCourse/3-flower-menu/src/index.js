@@ -8,37 +8,43 @@ const flowersData = [
     name: "Cherry",
     bloom: "July - August",
     color: "pink",
-    photoName: "flowers/Cherry.jpg",
+    photoName: "./flowers/Cherry.jpg",
+    soldOlt: true,
   },
   {
     name: "Orange Rose",
     bloom: "Spring - Summer",
     color: "Orange",
     photoName: "flowers/Orange_Rose.jpg",
+    soldOlt: false,
   },
   {
     name: "Petaled Flower",
     bloom: "All Year",
     color: "Many Colors",
-    photoName: "flowers/",
+    photoName: "flowers/Peraled_Flowers.jpg",
+    soldOlt: false,
   },
   {
     name: "Pink Rose",
     bloom: "Spring - Summer",
     color: "Dark Pink",
-    photoName: "flowers",
+    photoName: "flowers/Pink_Rose.jpg",
+    soldOlt: false,
   },
   {
     name: "Sun Flower",
     bloom: "Summer - Autumn",
     color: "Yellow",
-    photoName: "flowers",
+    photoName: "flowers/Sun_Flower.jpg",
+    soldOlt: false,
   },
   {
     name: "Tulip FLower",
     bloom: "March - May",
     color: "Many Colors",
-    photoName: "flowers",
+    photoName: "flowers/Tulip.jpg",
+    soldOlt: false,
   },
 ];
 
@@ -58,16 +64,33 @@ function Header() {
 
   return (
     <header className="header">
-      <h1 style={style}>Flower Colection.</h1>
+      <h1 style={style}>Flower Collection.</h1>
     </header>
   );
 }
 
 function Menu() {
+  const flowers = flowersData;
+  const numFlowers = flowers.length;
+
   return (
     <main className="menu">
       <h2>Our Flower Types</h2>
-      <Flowers
+
+      {numFlowers > 0 ? (
+        <React.Fragment>
+          <p>We only display the best flowers photos!</p>
+          <ul className="flowers">
+            {flowers.map((flowers) => (
+              <Flowers flowersObj={flowers} key={flowers.name} />
+            ))}
+          </ul>
+        </React.Fragment>
+      ) : (
+        <p>We're out of flowers photo submits! </p>
+      )}
+
+      {/* <Flowers
         name="Cherry"
         bloom="July - August"
         color="Light Pink"
@@ -79,22 +102,28 @@ function Menu() {
         bloom="Spring - Summer"
         color="Orange"
         photo={require("./flowers/Orange_Rose.jpg")}
-      />
+      /> */}
     </main>
   );
 }
 
-function Flowers(props) {
-  console.log(props);
+function Flowers({ flowersObj }) {
+  //console.log(props);
+  //console.log(flowersObj);
+
+  if (flowersObj.soldOlt) return null;
+
   return (
-    <div className="flower">
-      <img src={props.photo} alt={props.name} />
+    <li className={`flower ${flowersObj.soldOlt ? "sould-out" : ""}`}>
+      <img src={flowersObj.photo} alt={flowersObj.name} />
       <div>
-        <h3>{props.name}</h3>
-        <p>They bloom: {props.bloom}</p>
-        <span>Color: {props.color}</span>
+        <h3>{flowersObj.name}</h3>
+        <p>They bloom: {flowersObj.bloom}</p>
+        <span>
+          Color: {flowersObj.soldOlt ? "Not available" : flowersObj.color}
+        </span>
       </div>
-    </div>
+    </li>
   );
 }
 
@@ -105,10 +134,24 @@ function Footer() {
   const closeHour = 22;
   const isOpen = hour >= openHour && hour <= closeHour;
 
+  //if(!isOpen) return
+
   return (
     <footer className="footer">
-      {new Date().toLocaleTimeString()}. We're current open for photo submits.
+      {isOpen && <Submit closeHour={closeHour} openHour={openHour} />}
     </footer>
+  );
+}
+
+function Submit({ closeHour, openHour }) {
+  return (
+    <div className="order">
+      <p>
+        We're current open for photo submits from {openHour}: until {closeHour}
+        :00.
+      </p>
+      <button className="btn">Submit</button>
+    </div>
   );
 }
 
