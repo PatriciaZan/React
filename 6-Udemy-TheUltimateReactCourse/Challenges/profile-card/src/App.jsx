@@ -48,6 +48,7 @@ const skills = [
   },
 ];
 
+// FOR THE <ProfileCard />
 function App() {
   return (
     <>
