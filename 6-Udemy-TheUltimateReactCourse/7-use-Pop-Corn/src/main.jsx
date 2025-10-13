@@ -7,6 +7,11 @@ import StartRating from "./components/StartRating.jsx";
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     {/* <App /> */}
-    <StartRating maxRating={5} />
+    <StartRating
+      maxRating={10}
+      messages={["Terrible", "Bad", "Okay", "Good", "Amazing"]}
+      defaultRating={3}
+      // onSetRating={setMovieRating}
+    />
   </StrictMode>
 );
