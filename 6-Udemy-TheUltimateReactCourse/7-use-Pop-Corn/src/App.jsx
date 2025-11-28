@@ -104,8 +104,8 @@ export default function App() {
           //console.log(data.Search);
           setError("");
         } catch (err) {
-          console.error(err.message);
           if (err.name !== "AbortError") {
+            console.error(err.message);
             setError(err.message);
           }
         } finally {
@@ -301,6 +301,23 @@ function MovieDetail({ selectedId, onCloseMovie, onAddWatched, watched }) {
     onAddWatched(newWatchedMovie);
     onCloseMovie();
   }
+
+  useEffect(
+    function () {
+      function callback(e) {
+        if (e.code === "Escape") {
+          onCloseMovie();
+          //console.log("Closing with Esc");
+        }
+      }
+
+      document.addEventListener("keydown", callback);
+      return function () {
+        document.removeEventListener("keydown", callback);
+      };
+    },
+    [onCloseMovie]
+  );
 
   useEffect(
     function () {

@@ -1,16 +1,19 @@
-# React + Vite
+# UsePopConr project
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This was a simple project using the TMDB API <br>
 
-Currently, two official plugins are available:
+All the components are inside the App.js for easier understanding, since it is a simple course project.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+1. API calls
+2. Totally reusable ReactJS components
+3. Error handling
+4. Hooks
 
-## React Compiler
+## Prints
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Seach and view movie
+<img src="./prints/usePopCorn-1.png">
+<br>
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Favorites
+<img src="./prints/usePopCorn-2.png">
