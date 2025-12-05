@@ -1,3 +1,4 @@
+import "../DateCounter/styles.css";
 import { useReducer } from "react";
 //import { useState } from "react";
 
