@@ -1,12 +1,15 @@
 import { useEffect, useReducer } from "react";
 import Header from "./components/Header";
 import Main from "./components/Main";
+import Loader from "./components/Loader";
 
 const initialState = {
   questions: [],
   // 'loading' , 'error', 'ready', 'active', 'finish'
   status: "loading",
+  index: 0,
 };
+
 function reducer(state, action) {
   switch (action.type) {
     case "dataReceived":
@@ -20,20 +23,28 @@ function reducer(state, action) {
 }
 
 function App() {
-  const [state, dispatch] = useReducer(useReducer, initialState);
+  const [{ questions, status }, dispatch] = useReducer(
+    useReducer,
+    initialState
+  );
 
-  useEffect(function () {
+  function apiCall() {
     fetch("http://localhost:9000/questions")
       .then((res) => res.json())
       .then((data) => dispatch({ type: "dataReceived", payload: data }))
       .catch((err) => dispatch({ type: "dataFailed" }));
-  }, []);
+  }
+
+  // useEffect(() => {
+  //   apiCall();
+  // }, []);
+
   return (
     <div className="app">
       <Header />
       <Main>
-        <p>1/15</p>
-        <p>Question?</p>
+        {status === "loading" && <Loader />}
+        {status === "error" && <Error />}
       </Main>
     </div>
   );
