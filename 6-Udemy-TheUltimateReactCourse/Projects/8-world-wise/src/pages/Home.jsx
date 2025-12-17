@@ -6,8 +6,9 @@ export default function Home() {
   return (
     <div>
       <NavBar />
-      Home
+      <h1>Home Page</h1>
       {/* <Link to="/pricing">Pricing</Link> */}
+      <Link to="/app">Go to App</Link>
     </div>
   );
 }
