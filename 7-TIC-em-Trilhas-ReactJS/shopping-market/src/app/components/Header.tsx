@@ -6,7 +6,7 @@ export default function Header() {
       <div className="mx-auto flex items-center justify-between w-11/12 gap-52">
         <div>
           <a href="/">
-            <img src="" alt="LOGO" className="max-w-36" />
+            <img src="#" alt="LOGO" className="max-w-36" />
           </a>
         </div>
         <div className="w-4/5">
