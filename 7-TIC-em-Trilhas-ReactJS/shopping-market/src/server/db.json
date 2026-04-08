@@ -1,0 +1,58 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Cerejeira",
+      "description": "Símbolo de renovação e beleza efêmera. O plantio desta árvore promove a biodiversidade e embeleza paisagens com sua floração rosada.",
+      "price": 45.0,
+      "quantity": 100,
+      "category": "Ornamental",
+      "image": "Cherry"
+    },
+    {
+      "id": 2,
+      "name": "Bétula (Birch)",
+      "description": "Conhecida por seu tronco branco distinto, a Bétula é uma árvore pioneira que ajuda na recuperação de solos desgastados.",
+      "price": 35.0,
+      "quantity": 150,
+      "category": "Reflorestamento",
+      "image": "Birch"
+    },
+    {
+      "id": 3,
+      "name": "Cipreste (Cypress)",
+      "description": "Uma árvore resiliente e de vida longa, ideal para criar barreiras naturais e proteger ecossistemas contra ventos fortes.",
+      "price": 40.0,
+      "quantity": 80,
+      "category": "Resiliência",
+      "image": "Cypress"
+    },
+    {
+      "id": 4,
+      "name": "Bordo (Maple)",
+      "description": "Famosa por suas folhas vibrantes no outono. Este token contribui para o sequestro de carbono em larga escala devido ao seu porte.",
+      "price": 50.0,
+      "quantity": 120,
+      "category": "Sombra e Clima",
+      "image": "Maple"
+    },
+    {
+      "id": 5,
+      "name": "Carvalho (Oak)",
+      "description": "O rei das florestas. Um único Carvalho pode abrigar centenas de espécies de insetos e pássaros ao longo de seus séculos de vida.",
+      "price": 65.0,
+      "quantity": 60,
+      "category": "Ecossistema",
+      "image": "Oak"
+    },
+    {
+      "id": 6,
+      "name": "Pinho (Pine)",
+      "description": "Árvore de crescimento rápido e folhagem persistente, essencial para a manutenção de florestas em climas mais frios.",
+      "price": 30.0,
+      "quantity": 200,
+      "category": "Reflorestamento",
+      "image": "Pine"
+    }
+  ]
+}
