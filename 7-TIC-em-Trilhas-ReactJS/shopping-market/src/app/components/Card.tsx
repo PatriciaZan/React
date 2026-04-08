@@ -1,7 +1,9 @@
+import { useShoppingList } from "../contexts/ShoppingCart";
 import type { Product } from "../interfaces/Product";
 import Button from "./Button";
 
 export default function Card({ item }: Product) {
+  const { addProduct } = useShoppingList();
   return (
     <div className="flex h-96 w-64 flex-col justify-center bg-white p-2 rounded-2xl ">
       <div className="flex justify-center">
@@ -22,7 +24,13 @@ export default function Card({ item }: Product) {
           <span>$ {item.price}</span>
         </div>
 
-        <Button>Add no carrinho</Button>
+        <Button
+          onClick={() => {
+            addProduct(item.id, item.name, item.price);
+          }}
+        >
+          Add no carrinho
+        </Button>
       </div>
     </div>
   );

@@ -6,11 +6,16 @@ import { useEffect, useRef, useState, type ChangeEvent } from "react";
 import { debounce } from "lodash";
 import List from "./List";
 import { useOnClickOutside } from "../hooks/useClickOutside";
+import { CiShoppingCart } from "react-icons/ci";
+import { Link } from "react-router-dom";
+import { useShoppingList } from "../contexts/ShoppingCart";
 
 export default function Header() {
   const [productName, setProductName] = useState("");
   const [isOpen, setIsOpen] = useState(false);
   const refDropdown = useRef<HTMLUListElement>(null);
+
+  const { totalQtd } = useShoppingList();
 
   const {
     data: productsByName,
@@ -50,9 +55,9 @@ export default function Header() {
     <header className="flex fixed justify-center top-0 right-0 w-full bg-white py-3">
       <div className="mx-auto flex items-center justify-between w-11/12 gap-52">
         <div>
-          <a href="/">
+          <Link to="/" relative="path">
             <img src="#" alt="LOGO" className="max-w-36" />
-          </a>
+          </Link>
         </div>
         <div className="w-4/5 relative">
           <Input onChange={debounceHandleOnChange} />
@@ -78,7 +83,15 @@ export default function Header() {
             </ul>
           )}
         </div>
-        <div>carrinho</div>
+        <Link to="/shopping-cart" relative="path" className="flex">
+          <CiShoppingCart className="h-9 w-20" />
+
+          {totalQtd > 0 && (
+            <div className="relative right-8 flex size-6 justify-center rounded-3xl bg-blue-400">
+              <span>{totalQtd}</span>
+            </div>
+          )}
+        </Link>
       </div>
     </header>
   );
