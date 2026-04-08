@@ -13,7 +13,7 @@ export default function Input({ onChange, ...props }: InputProps) {
       <input
         onChange={onChange}
         type="text"
-        placeholder="Seacrh . . ."
+        placeholder="Search . . ."
         className={inputVariantes.base}
         {...props}
       />
