@@ -3,12 +3,13 @@ import Input from "./Input";
 import { useQuery } from "@tanstack/react-query";
 import { ProductService } from "../services/product.service";
 import { useEffect, useRef, useState, type ChangeEvent } from "react";
-import { debounce } from "lodash";
+import { debounce, isNull } from "lodash";
 import List from "./List";
 import { useOnClickOutside } from "../hooks/useClickOutside";
 import { CiShoppingCart } from "react-icons/ci";
 import { Link } from "react-router-dom";
 import { useShoppingList } from "../contexts/ShoppingCart";
+import authService from "../services/auth.service";
 
 export default function Header() {
   const [productName, setProductName] = useState("");
@@ -83,15 +84,28 @@ export default function Header() {
             </ul>
           )}
         </div>
-        <Link to="/shopping-cart" relative="path" className="flex">
-          <CiShoppingCart className="h-9 w-20" />
+        <div className="flex justify-center items-center">
+          <Link to="/shopping-cart" relative="path" className="flex">
+            <CiShoppingCart className="h-9 w-20" />
 
-          {totalQtd > 0 && (
-            <div className="relative right-8 flex size-6 justify-center rounded-3xl bg-blue-400">
-              <span>{totalQtd}</span>
-            </div>
+            {totalQtd > 0 && (
+              <div className="relative right-8 flex size-6 justify-center rounded-3xl bg-blue-400">
+                <span>{totalQtd}</span>
+              </div>
+            )}
+          </Link>
+          {!isNull(authService.getLoggedUser()) && (
+            <span
+              className="cursor-pointer"
+              onClick={() => {
+                authService.cleanoggedUser();
+                window.location.reload();
+              }}
+            >
+              Logout
+            </span>
           )}
-        </Link>
+        </div>
       </div>
     </header>
   );

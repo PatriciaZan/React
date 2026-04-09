@@ -1,13 +1,22 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { ShoppingListProvider } from "./app/contexts/ShoppingCart";
 
-//import Header from "./app/components/Header";
 import Home from "./app/view/Home";
 import Layout from "./app/components/Layout";
 import ShoppingCart from "./app/view/ShoppingCart";
-import { ShoppingListProvider } from "./app/contexts/ShoppingCart";
+import Login from "./app/view/Login";
+import SignUp from "./app/view/SignUp";
 
 function App() {
   const route = createBrowserRouter([
+    {
+      path: "/login",
+      element: <Login />,
+    },
+    {
+      path: "/register",
+      element: <SignUp />,
+    },
     {
       // path: "/",
       // element: (

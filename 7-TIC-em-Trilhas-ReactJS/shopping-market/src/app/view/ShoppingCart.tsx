@@ -1,9 +1,21 @@
+import { useNavigate } from "react-router-dom";
 import Button from "../components/Button";
 import { useShoppingList } from "../contexts/ShoppingCart";
+import { useEffect } from "react";
+import { isNull } from "lodash";
+import authService from "../services/auth.service";
 
 export default function ShoppingCart() {
   const { items, addProduct, onRemove, onDecrease, totalSumAmount } =
     useShoppingList();
+
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (!isNull(authService.getLoggedUser())) {
+      navigate("/");
+    }
+  });
   return (
     <div className="flex h-full flex-col gab-12">
       <div className="mt-32 flex h-4/5 justify-center overflow-x-auto">

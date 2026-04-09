@@ -1,5 +1,7 @@
 import { createContext, useContext, useState } from "react";
 
+import authService from "../services/auth.service";
+
 interface ShoppingListProviderProps {
   children: React.ReactNode;
 }
