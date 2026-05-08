@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import DatePicker from "react-datepicker";
-import "react-datepicker/dist/react-datepicker.css";
+//import "react-datepicker/dist/react-datepicker.css";
 
 import styles from "./Form.module.css";
 import Button from "./Button";
@@ -45,7 +45,7 @@ function Form() {
           setIsLoadingGiocoding(true);
           setGeocodingError("");
           const res = await fetch(
-            `${BASE_URL}?latitude=${lat}&longitude=${lng}`
+            `${BASE_URL}?latitude=${lat}&longitude=${lng}`,
           );
           const data = await res.json();
           console.log(data);
@@ -65,7 +65,7 @@ function Form() {
       }
       fetchCityData();
     },
-    [lat, lng]
+    [lat, lng],
   );
 
   async function handleSubmit(e) {
