@@ -1,7 +1,32 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
 :root {
   --bg: #ffffff;
   --text: #111111;
   --primary: #4f46e5;
+
+  // Font Family
+  --fontFamily-main: "Roboto", sans-serif;
+
+  // Font sizes
+  --fontSize-body: clamp(1rem, 2.6vw + 1rem, 1.125rem); // 18px - 16px
+  --fontSize-h1: clamp(1.875rem, 2.6vw + 1rem, 3.75rem); // 50px - 30px
+  --fontSize-h2: clamp(1.625rem, 2.6vw + 1rem, 2.25rem); // 36px - 26px
+  --fontSize-h3: clamp(1.25rem, 2.6vw + 1rem, 1.625rem); // 26px - 20px
+  --fontSize-h4: clamp(1.125rem, 2.6vw + 1rem, 1.375rem); // 18px- 22px
+
+  // Various
+  --borderRadius: 1.125rem;
+  --borderRadius-small: 0.25rem;
+  --borderRadius-button: 5px;
+  --boxShadow: 0 2px 10px 0 rgba(29, 29, 27, 0.1);
+  --textShadow: 0 3px 5px rgba(0, 0, 0, 0.25);
+
+  // Layout of Grid
+  --layoutGrid-content-width: 1380px;
+  --layoutGrid-breakout-width: 1800px;
+  --layoutGrid-spacing: clamp(1.375rem, 5vw - 0.25rem, 5rem);
+  --layoutGrid-spacing-breakout: 22px;
 }
 
 /* LIGHT */
@@ -20,7 +45,7 @@
 
 /* DARK */
 [data-theme="dark"] {
-  --background: #09090b;
+  --background: #242424;
   --foreground: #fafafa;
 
   --surface: #18181b;

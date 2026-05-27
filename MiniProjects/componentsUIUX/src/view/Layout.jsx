@@ -1,8 +1,8 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import Navbar from "../components/display/Navbar";
+import Navbar from "../components/Navbar";
 import Display from "./Display";
-import HeroCall from "../components/display/HeroCall";
+import HeroCall from "../components/HeroCall";
 
 export default function Layout() {
   return (
@@ -12,9 +12,9 @@ export default function Layout() {
       <HeroCall />
       {/* PAGE SUB NAVBAR */}
       <nav>
-        <NavLink to="">NavBar</NavLink>
-        <NavLink to="banners">banners</NavLink>
-        <NavLink to="cards">cards</NavLink>
+        <NavLink to="">Components</NavLink>
+        <NavLink to="structure">Structure</NavLink>
+        <NavLink to="responsive">Responsivenes</NavLink>
       </nav>
       <Display />
     </div>

@@ -5,3 +5,22 @@
   padding: 0;
   box-sizing: border-box; /* Makes width/height include padding and borders */
 }
+
+body {
+  font-family: var(--fontFamily-main);
+  font-size: var(--fontSize-body);
+}
+
+h1 {
+  font-size: var(--fontSize-h1);
+}
+
+h2 {
+  font-size: var(--fontSize-h2);
+}
+h3 {
+  font-size: var(--fontSize-h3);
+}
+h4 {
+  font-size: var(--fontSize-h4);
+}
