@@ -1,0 +1,28 @@
+.teste {
+  div {
+    width: 100px;
+    height: 100px;
+  }
+  .background {
+    background-color: var(--background);
+  }
+
+  .foreground {
+    background-color: var(--foreground);
+  }
+  .surface {
+    background-color: var(--surface);
+  }
+  .surfaceSec {
+    background-color: var(--surface-secondary);
+  }
+  .accent {
+    background-color: var(--accent);
+  }
+  .accentFore {
+    background-color: var(--accent-foreground);
+  }
+  .border {
+    background-color: var(--borde);
+  }
+}
