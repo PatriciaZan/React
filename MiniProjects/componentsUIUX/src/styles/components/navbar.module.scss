@@ -2,9 +2,15 @@ nav ul {
   width: 100%;
   list-style: none;
   display: flex;
-  padding: 10px;
+  padding: 20px;
 
   li:first-child {
     margin-right: auto;
+  }
+
+  button {
+    padding: 0.5em 1em;
+    margin: 0 0.5em;
+    display: flex;
   }
 }

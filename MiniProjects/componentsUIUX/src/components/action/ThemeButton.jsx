@@ -5,10 +5,17 @@ import { useTheme } from "../../contexts/ThemeContext";
 
 export default function ThemeButton({ color, theme }) {
   const { changeTheme } = useTheme();
+  console.log(color);
+
   return (
     <button onClick={() => changeTheme(theme)}>
-      <div className={styles.colorDiv} style={{ background: color }}></div>
-      {theme}
+      <div
+        className={styles.colorDiv}
+        style={{
+          background: color,
+        }}
+      ></div>
+      <span>{theme}</span>
     </button>
   );
 }
