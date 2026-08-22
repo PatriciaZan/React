@@ -1,15 +1,11 @@
-import DayActivity from "../DayActivity/DayActivity";
 import styles from "./dayCard.module.scss";
 
-export default function DayCard({ day, activities }) {
+export default function DayCard({ day }) {
   return (
-    <div className={styles.dayCard}>
+    <div className={`${styles.dayCard}  ${day.isToday ? styles.today : ""} `}>
       <div>
-        <p className={styles.day}>{day}</p>
+        <p className={`${styles.day}`}>{day.number}</p>
       </div>
-      {/* {activities.map((activity) => (
-        <DayActivity activity={activity} key={activity.id} />
-      ))} */}
     </div>
   );
 }
